@@ -40,6 +40,8 @@
   <div class="contacts">
       <h3>Naman Kumar Soni</h3>
          Work in progress.<br><br>
+      <h3>Naman Kumar Soni</h3>
+         Work in progress.<br><br>
      
 
 
