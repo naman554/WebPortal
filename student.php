@@ -14,7 +14,7 @@
 
 
     <div class="image">
-        <img src="pictures/logo.png" style="width:150px;height:150px; float:right;">
+        <img src="pictures/logo.png" style="width:150px;height:150px; float:left;">
 
     </div id="nit">
      <h1 style="float:left; margin:50px; font-size:50px; color:white; ">NIT DURGAPUR</h1>
@@ -51,7 +51,7 @@
 
         <a href="#" class="mybtn" id="gobtn" type="submit" value="submit" onclick="return validateform()">go</a><span>Forget Password?</span><br><br><br>
         <a href="registration.php" class="myButton">New User?</a><br>
-   
+        
    </div>
    
   

@@ -9,7 +9,9 @@
 
 
 <link rel="stylesheet" type="text/css" href="style.css">
+
 <script type="text/javascript">
+
        function validateform(){
             var x = document.forms["student_form"]["fname"].value;
             if(x== null || x== ""){
@@ -82,10 +84,10 @@
 
 
     <div class="image">
-        <img src="pictures/logo.png" style="width:150px;height:150px; float:right;">
+        <img src="pictures/logo.png" style="width:150px;height:150px; float:left;">
 
     </div>
-     <h1 style="float:left; margin:50px; font-size:50px; color:rgb(0, 63, 179);">NIT DURGAPUR</h1>
+     <h1 style="float:left; margin:50px; font-size:50px; color:white;">NIT DURGAPUR</h1>
     <br><br><br><br><br><br><br><br>
 
 <div id="header">
@@ -174,10 +176,10 @@
                <input type="text" id="re" name="reg"  onchange=" set_year()" >
 
             </label>
-            <label onclick="branch_change() "id="bname" name="branch">
+            <label >
 
                 Branch Name:
-                        <select >
+                        <select name="branch" onclick="branch_change() "id="bname" >
                             <option selected >--select--
                             <option >CSE
                              <option >IT
@@ -193,7 +195,7 @@
             </label>
             <label id="sem">
                 Semester:
-                        <select>
+                        <select name="sem">
                             <option value="none">--Select--</option>
                             <option value="1">1st Semester</option>
                              <option value="2">2nd Semester</option>
@@ -229,14 +231,15 @@
 
         </fieldset><br><br>
 
-            
+            <input type="submit" name="submit" value="submit">
            
-           <input type="submit" name="submit" value="submit">
+           
             
 
         </form>
         
 </div>
+
 
 <div id="footer">
 Copyright © IT Department

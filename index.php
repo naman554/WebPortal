@@ -15,7 +15,7 @@
 
 
     <div class="image">
-        <img src="pictures/logo.png" style="width:150px;height:150px; float:right;">
+        <img src="pictures/logo.png" style="width:150px;height:150px; float:left;">
 
     </div>
      <h1 style="float:left; margin:50px; font-size:50px; color:white;">NIT DURGAPUR</h1>
@@ -38,7 +38,8 @@
 </div>
 
 <div id="section">
-   <h3 style="color:white; padding-left:20px;"> It department Web portal.</h3>
+   <h3 style="color:white; margin-left:400px; font-size:40px; font-family:Comic Sans MS; color: #0099ff;"> WebPortal</h3><br>
+   <img src="pictures/wp.jpg" style=" width:1175px; height:500px;">
    
    
 </div>

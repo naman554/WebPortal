@@ -15,10 +15,10 @@
 
 
     <div class="image">
-        <img src="pictures/logo.png" style="width:150px;height:150px; float:right;">
+        <img src="pictures/logo.png" style="width:150px;height:150px; float:left;">
 
     </div>
-      <h1 style="float:left; margin:50px; font-size:50px; color:rgb(0, 63, 179);">NIT DURGAPUR</h1>
+      <h1 style="float:left; margin:50px; font-size:50px; color:white;">NIT DURGAPUR</h1>
     <br><br><br><br><br><br><br><br>
 
 <div id="header">
