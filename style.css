@@ -106,38 +106,32 @@ ul{
     padding-left: 10px;
 
 }
-label{
 
-    margin-left: 80px;
-}
 
 #address{
 
-    margin-left: 140px;
+    margin-left: 0px;
 }
 #birth{
 
-    margin-left: 120px;
+    margin-left: 0px;
 }
 #mail{
-    margin-left: 75px;
+    margin-left: 0px;
 }
 #pic{
-    margin-left: 90px;
+    margin-left: 0px;
 
 }
-#shwbox{
 
-    margin-left: 700px;
-}
 #bname{
-    margin-left: 50px;
+    margin-left: 0px;
 }
 #sem{
-    margin-left: 170px;
+    margin-left: 0px;
 }
 #pass{
-    margin-left:90px;
+    margin-left:0px;
 }
 
 .mybtn {
@@ -188,3 +182,20 @@ label{
 #gobtn{
     margin-left: 5px;
 }
+.col{
+
+    color:white;
+}
+#table{
+    margin-left: 200px;
+}
+#submit{
+
+    margin-left: 500px;
+}
+#col{
+
+     color:white;
+
+}
+
