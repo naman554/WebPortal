@@ -11,325 +11,90 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script type="text/javascript">
+<script type="text/javascript">/*
 
-       function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#pic')
-                    .attr('src', e.target.result)
-                    .width(150)
-                    .height(200);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    function get_Age() {
-    var today = new Date();
-    
-    var d = document.getElementById("birth");
-	var birthDate = new Date(d.value);
-	birthDate.value= d.value;
-	var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-	var ages = document.getElementById("age");
-	ages.value = age;
-	
-	
-}
- var branch1=document.registration.branch;
-function formvalidation()
-
- { 
-   var userid=document.registration.uid;
-    var passwd=document.registration.pwd;
-    var firstname=document.registration.fname;
-    var lastname=document.registration.lname;
-    var email=document.registration.email;
-    var umsex=document.registration.msex;
-    var ufsex=document.registration.fsex;
-
-   var r =document.registration.regn;
-    
-   var phone=document.registration.mob;
-        if (allLetter1(firstname))
-        
-         {
-             if(allLetter2(lastname))
-             { 
-              
-              
-              if(checkGender(this))
-              {
-              
-                 if(ValidateEmail(email))
-                 {
-                  if(valmob(phone))
-                  {
-                    
-                    
-                if(branchselect(branch1))
-               {
-                 if(regselect(r,8))
-                  {
-                     if(userid_validation(userid,5,12))
-                   {
-                         if(passwd_validation(passwd,7,12))
-                        {
-                            
-                             
-                                
-                           
-                       }
-                       }
-                    }
-             }
-         }
-         }
-         }
-        }
-        }
-        
-        
-        return false;
- }
-
-function allLetter1(firstname)
- {
-    var letters = /^[A-Za-z]+$/;
-    if(firstname.value.match(letters))
-    {
-        return true;
-    }
-    else
-    {
-        
-        alert("Firstname must have alphabet characters only");
-        firstname.focus();
-        return false;
-        
-    }
-    }
-    function allLetter2(Middle)
- {
-    var letters = /^[A-Za-z]+$/;
-    if(lastname.value.match(letters))
-    {
-        return true;
-    }
-    else
-    {
-        
-        alert("Middle Name must have alphabet characters only");
-        lastname.focus();
-        return false;
-        
-    }
-}
-   function allLetter3(lastname)
- {
-    var letters = /^[A-Za-z]+$/;
-    if(lastname.value.match(letters))
-    {
-        return true;
-    }
-    else
-    {
-        
-        alert("Lastname must have alphabet characters only");
-        lastname.focus();
-        return false;
-        
-    }
-}
-    function calculateAge() {
-
-        var inputDate = document.getElementById("dob1");
-        if (inputDate.value == "" || inputDate.value == null) {
-            alert("Date of birth Entry shouldn't be empty");
-            
-            dob1.focus();
-            return false;
-        }
-        else {
-            //Now find the Age based on the Birth Date
-            getAge(new Date(inputDate.value));
-        }
-
- }
-      function checkGender(){
-            if(!document.getElementsByName("sex")[0].checked && !document.getElementsByName("sex")[1].checked)
-        {
-            alert("Select Male/Female");
-
-            return false;
-        }
-        else{
-             return true;
-        }
-       
-    }
-         
-    function ValidateEmail(emailaddress)
- {
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(emailaddress.value.match(mailformat))
-    {
-        return true;
-    }
-    else
-    {
-        alert("You have entered an invalid email address!");
-        email.focus();
-        return false;
-    }
-}
-function Valmob(phone)
-{ 
-  var phone_format = /^[0-9]+$/;
-  if(phone.value.match(phone_format))
-            {
-              return true;
-            }
-    else
-    {
-          alert("Phone number must be only numbers");
-                phone.focus();
+       function validateform(){
+            var x = document.forms["student_form"]["fname"].value;
+            if(x== null || x== ""){
+                alert("Firstname must be filled out.");
                 return false;
-        
-    }
-    
-     
-}
-   function branchselect(branch1)
-        {
-    if(branch1.value == "Default")
-    {
-     alert('Select your branch from the list');
+            }
 
-    branch1.focus();
-    return false;
-    }
-    else
-    {
-    return true;
-    }
-    }
-    function regselect(r,ln)
-    { 
-     var regn_len=r.value.length;
-      if(regn_len == 0 || regn_len != ln)
-                {
+            var y = document.forms["student_form"]["lname"].value;
+            if(y== null || y== ""){
+                alert("Lastname must be filled out.");
+                return false;
+            }
+            var z = document.forms["student_form"]["phone"].value;
+            if(z== null || z== ""){
+                alert("Phone number must be filled out.");
+                return false;
+            }
+            var p = document.forms["student_form"]["emailaddress"].value;
+            if(p == null || p == ""){
+                alert("Email address must be filled out.");
+                return false;
+            }
+            var q = document.forms["student_form"]["dob"].value;
+            if(q == null || q == ""){
+                alert("Date of birth must be filled out.");
+                return false;
+            }
+            var r = document.forms["student_form"]["reg"].value;
+            if(r.length !=8){
                 alert("Registration number must be filled out.");
-                r.focus();
-                 return false;
-                 }
-       else{
-        return true;
-       }
+                return false;
+            }
+            var s = document.forms["student_form"]["usrname"].value;
+            var t = document.forms["student_form"]["pswd"].value;
+
+            if(s == null || s == "" || t == null || t == ""){
+                alert("Fill up login details.");
+                return false;
+            }
+            
+        }*/
+       
+       
+        function set_year(){
+            var x=document.getElementById("re");
+            var y =x.value;
+            var z=y.slice(2,4);
+            var a=document.getElementById("yr");
+             a.value=z;
+        }
+        function branch_change(){
+              // alert("hehe");
+            var x=document.getElementById("bname");
+            //alert(x.value);
+            var y=document.getElementById("branch");
+            y.value=x.value;
+        }
+
+       
         
-      
-    } 
-
-    function Pincode(r) {
-        var len = r.value.length;
-    if (len == 0 )
-        {
-            alert("pincode should not be empty");
-            r.focus();
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-     function Country(l) {
-        var con_len = l.value.length;
-    if (con_len == 0 )
-        {
-            alert("Country name should not be empty");
-            l.focus();
-            return false;
-        }
-        else{
-            return true;
-        }
+    function get_Age() {
+            var today = new Date();
+            
+            var d = document.getElementById("birth");
+        	var birthDate = new Date(d.value);
+        	birthDate.value= d.value;
+        	var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+        	var ages = document.getElementById("age");
+        	ages.value = age;
+	
+	
     }
 
-     function place(m) {
-        var place_len = m.value.length;
-    if (place_len == 0 )
-        {
-            alert("City/Town should not be empty");
-            m.focus();
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-
-    
     
 
-
-function userid_validation(userid,mx,my)
- {
-    var userid_len = userid.value.length;
-    if (userid_len == 0 || userid_len >= my || userid_len < mx)
-        {
-            alert("User Id should not be empty / length be between "+mx+" to "+my);
-            userid.focus();
-            return false;
-        }
-        else{
-            return true;
-        }
-    
- }
- function passwd_validation(passwd,mx,my)
- {
-    var passwd_len = passwd.value.length;
-    if (passwd_len == 0 ||passwd_len >= my || passwd_len < mx)
-        {
-            alert("Password should not be empty / length be between "+mx+" to "+my);
-            passwd.focus();
-            return false;
-        }
-       else{
-        return true;
-       }
-   
- }
- 
-
-function passwordcheck(){
-	hob();
-var a = document.getElementById("password");
-var b = document.getElementById("password1");
-if(a.value!=b.value)
-alert("password do not match")
-
-}
-
- function otherHobbies (hobbies) {
-            var shwbox = document.getElementById("shwbox");
-            shwbox.style.display = hobbies.checked ? "block" : "none";
-        }
-
-
-</script>
-</head>
                
     </script>
-
+   
 
     
 </head>
@@ -374,28 +139,28 @@ alert("password do not match")
                                                         
                                                         <td><a   class="col">
                                                         First name:</td>            
-                                                       <td> <input type="text" name="fname"  onblur="allLetter1(this)">
+                                                       <td> <input type="text" name="fname" >
                                                         </a></td>
                                                         <td> <a  class="col">
                                                         Middle name:</td>
-                                                        <td><input type="text" name="mname" onblur="allLetter2(this)" >
+                                                        <td><input type="text" name="mname" >
                                                         </a></td>
                     </tr><tr>
 
                                                         <td><a class="col">
                     
                                                         Last name:</td>
-                                                        <td><input type="text" name="lname" onblur="allLetter3(this)" > </a></td>    
+                                                        <td><input type="text" name="lname" > </a></td>    
                     
                     
                                                                 <td><a  class="col">
                                                         Contact no.:</td>
-                                                           <td><input type="phone" name="phone"  onblur="Valmob(phone)">
+                                                           <td><input type="phone" name="phone">
                                                         </a></td>
                                                         </tr><tr>
                                                         <td style="text-align:left; padding-left: 0px;"><a id="mail" class="col" >
                                                           Email:</td>
-                                                           <td><input type="email" name="emailaddress" onblur="ValidateEmail(emailaddress)">
+                                                           <td><input type="email" name="emailaddress">
                                                         </a></td>
                                                        <td> <a   class="col"  >
                                                          Date of birth:</td>
@@ -426,7 +191,7 @@ alert("password do not match")
                                                         <td>
                                                         <a  class="col"> Country:</a>
                                                         </td>
-                                                        <td><input type="text" name="country" onblur="Country(this);"></td>
+                                                        <td><input type="text" name="country"></td>
                                                     <td><a  class="col">
                                                             state:</td>
                                                             <td>
@@ -511,30 +276,29 @@ alert("password do not match")
                 </tr><tr>
                                                         <td><a  class="col">
                                                             City/Town:</td>
-                                                            <td><input type="text" name="city" onblur="place(this);">
+                                                            <td><input type="text" name="city">
                                                         </a></td>
 
                                                         <td>
                                                             <a  class="col">
                                                                 Pin Code:
-                                                                <td><input type="digits" name="pincode" onblur="Pincode(this);"></td>
+                                                                <td><input type="digits" name="pincode"></td>
                                                             </a>
                                                         </td>
                 </tr>
 
                 <tr>
 
-                                                       <td id="col"><label for="photo">Upload your Photo: </label></td>
+                                                        <td id="col"><label for="photo">Upload your Photo: </label></td>
                                                         <td><input type="file" id="files"  name="file[]"/>
                                                         <img id="image"/></td>
 
 
-
-                                                       <td id="col" >
+                                                        <td id="col" >
                                                             Hobbies:</td>
                                                         <td>
-                                                       
-            <div id="hob" class="col">
+                                                        <label for="inputName" class="control-label" style="font-family:comic sans ms;">Hobbies</label>
+            <div id="hob">
               <input type="checkbox" name="hobb"  id="id1" value="Painting" style="font-family:courier;">Painting<br>
               <input type="checkbox" name="hobb"  id="id2" value="Dancing" style="font-family:courier;">Dancing<br>
               <input type="checkbox" name="hobb"  id="id3" value="Reading" style="font-family:courier;">Reading<br>
@@ -545,7 +309,6 @@ alert("password do not match")
               <textarea name="hobbies" id="ho" style="display:none;"></textarea>
             </div>
 
-
                                                         </td>
                 </tr>                                       
 
@@ -553,13 +316,13 @@ alert("password do not match")
 
                                                        <td> <a  class="col">
                                                             Registration no.:</td>
-                                                           <td><input type="text" id="re" name="reg" onchange="year1();" onblur="regselect(this,ln);" >
+                                                           <td><input type="text" id="re" name="reg"  onchange=" set_year()" >
 
                                                         </a></td>
                                                         <td><a  class="col" >
 
                                                             Branch Name:</td>
-                                                                    <td><select name="branch" id="bcode" onchange="branchcode();" onblur="branchselect(branch1);">
+                                                                    <td><select name="branch" onclick="branch_change() "id="bname" >
                                                                         <option selected >--select--
                                                                         <option >CSE
                                                                          <option >IT
@@ -572,38 +335,6 @@ alert("password do not match")
                                                                          <option >CE
                                                                     </select>
                     </tr><tr>
-
-
-                                                                <script>
-                                                            function branchcode(){
-                                                                     var x = document.getElementById("bcode");
-                                                                         var y = document.getElementById("branch");
-                                                                         
-                                                                         if(x.value == "BT")
-                                                                         y.value="BT";
-                                                                         else if(x.value == "CHE")
-                                                                         y.value="CHE";
-                                                                         else if(x.value == "CSE")
-                                                                         y.value="CSE";
-                                                                         else if(x.value == "IT")
-                                                                         y.value="IT";
-                                                                         else if(x.value == "MME")
-                                                                         y.value="MME";
-                                                                         else if(x.value == "MME")
-                                                                         y.value="MME";
-                                                                         else if(x.value == "EE")
-                                                                         y.value="EE";
-                                                                         else if(x.value == "ECE")
-                                                                         y.value="ECE";
-                                                                         else if(x.value == "CE")
-                                                                         y.value="CE";
-                                                                         }
-                                                                         function year1(){
-                                                                         var p = document.getElementById("re");
-                                                                         var q = document.getElementById("yr");
-                                                                         q.value = p.value.substring(2,4);
-                                                              }
-                                                            </script>
 
                                                         </a></td>
                                                         <td><a id="sem"  class="col">
@@ -634,17 +365,17 @@ alert("password do not match")
                                                         
                                                          <td><a  class="col">
                                                             Username:</td>
-                                                            <td><input type="text" name="usrname"  onblur="userid_validation(this)">
+                                                            <td><input type="text" name="usrname">
                                                         
                                                          </a></td>   
                                                        <td> <a id="pass"  class="col">
                                                              Password:</td>
-                                                       <td> <input type="password" name="pswd" id="password" ></td>
+                                                       <td> <input type="password" name="pswd"></td>
                 </tr><tr>
 
                                                       <td><a  class="col">
                                                             Confirm Password:</td>
-                                                       <td> <input type="password" name="pswd" id="password1" onchange="passwordcheck()">
+                                                       <td> <input type="password" name="pswd">
 
                                             </a></td>
                                             
@@ -688,10 +419,9 @@ document.getElementById("files").onchange = function () {
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);
 };
-</script>
-<script type="text/javascript">
-    
-    function hob() {
+
+
+function hob() {
     var checkboxes = document.getElementsByName('hobb');
           var vals = "";
           for (var i=0, n=checkboxes.length;i<n;i++)
@@ -715,9 +445,9 @@ document.getElementById("files").onchange = function () {
      function other(){
       //alert("othes is checked");
       var h = document.getElementById("oth");
-     	var show = document.getElementById("extrah");
-     	show.style.display = h.checked ? "block" : "none";
+        var show = document.getElementById("extrah");
+        show.style.display = h.checked ? "block" : "none";
      }
+</script>
 
-</script>>
 </html>

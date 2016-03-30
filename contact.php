@@ -39,7 +39,15 @@
 <div id="section">
   <div class="contacts">
       <h3>Naman Kumar Soni</h3>
-         Work in progress.<br><br>
+         	13/IT/20<br><br>
+         	<h3>Prerona Dutta</h3>
+         	13/IT/57<br><br>
+         	<h3>Sudhanshu Singh</h3>
+         	13/IT/63<br><br>
+     <h3>Nisha V Prasad</h3>
+         	13/IT/90<br><br>
+     
+     
      
 
 

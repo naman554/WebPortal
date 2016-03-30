@@ -2,6 +2,7 @@
 	include("include/conn.php");
 
 ?>
+
 <?php
 	echo '<div class="panel panel-default" style="margin-left:50px; margin-right:50px;" >';
 	echo '<div class="panel-heading" style="padding-left:400px;" >Registered Students</div>'; 
@@ -25,11 +26,13 @@
 		echo '<td>'.$a["phone"].'</td>';
 		echo '<td>'.$a["gender"].'</td>';
 		echo '<td>'.$a["dob"].'</td>';
-		echo '<td colspan="2"><a href="accept_redirect.php?id='.$a["id"].'"><button type="button" class="btn btn-default btn-lg">Accept </button></a> ';
+		echo '<td colspan="3"><a href="accept_redirect.php?id='.$a["id"].'"><button type="button" class="btn btn-default btn-lg">Accept </button></a> ';
+		echo '<a href="view.php?id='.$a["id"].'"><button type="button" class="btn btn-default btn-lg" >View </button></a>';
 		echo '<a href="reject_redirect.php?id='.$a["id"].'"><button type="button" class="btn btn-default btn-lg">Reject </button></a></td></tr>';
 		
 	}
 	echo '</table>';
+	echo '<div id="response"></div>';
 	echo '</div>';
 
 

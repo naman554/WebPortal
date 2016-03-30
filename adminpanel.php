@@ -1,7 +1,16 @@
 <?php
     include("include/conn.php");
+      session_start();
 ?>
 
+<?php
+  
+    if(isset($_SESSION['id']))
+    {
+   
+   
+  
+?>
 <html>
 <head>
 
@@ -39,6 +48,18 @@ function registered () {
   xhttp.open("POST", "registered_student.php", true);
   xhttp.send();
 }
+function notice () {
+  
+    var xhttp; 
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("response").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "notice_ajax.php", true);
+  xhttp.send();
+}
 
 
 </script>>
@@ -60,13 +81,15 @@ function registered () {
          <li class="menu"><a href="index.php"  style="text-decoration:none; color:rgb(0, 63, 179); "><b>HOME<b></a></li>
          <li class="menu"><a href="about.php" style="text-decoration:none;color:rgb(0, 63, 179);">ABOUT</a></li>
           <li class="menu"><a href="contact.php" style="text-decoration:none; color:rgb(0, 63, 179);">CONTACTS</a></li>
+           <li class="menu"><a href="logout.php" style="text-decoration:none; color:rgb(0, 63, 179); float:right;">Logout</a></li>
     </ul>
+    
 </div>
 
 <div id="nav">
   <a href="student.php" class="myButton">student</a><br>
   <a href="admin.php" class="myButton">admin</a><br>
-  <a href="#" class="myButton">about</a><br>
+<a href="about.php" class="myButton">about</a><br>
 </div>
 
 <div id="section">
@@ -85,6 +108,7 @@ function registered () {
     </button>
     <ul class="dropdown-menu">
       <li><a href="registration.php">Insert</a></li>
+      <li><a onclick="return notice();">Notice</a></li>
      
     </ul>
   </div>
@@ -100,3 +124,12 @@ Copyright © IT Department
 
 </body>
 </html>
+
+<?php
+ }
+    else
+    {
+    
+      header('Location:admin.php');
+    }
+?>

@@ -34,12 +34,25 @@
     <br><br>
 <a href="student.php" class="myButton">student</a><br>
 <a href="admin.php" class="myButton">admin</a><br>
-<a href="#" class="myButton">about</a><br>
+<a href="about.php" class="myButton">about</a><br>
 </div>
 
 <div id="section">
    <h3 style="color:white; margin-left:400px; font-size:40px; font-family:Comic Sans MS; color: #0099ff;"> WebPortal</h3><br>
-   <img src="pictures/wp.jpg" style=" width:1175px; height:500px;">
+   <div>
+      <table width="50%" id="notice" bgcolor="white">
+        <th style="font-size: 20px;">Notice Board</th> 
+        <?php
+          $a = mysql_query("SELECT * FROM `notice`;");
+          while($b=mysql_fetch_assoc($a))
+          {
+            $c=$b['notice'];
+            echo '<tr><td>&#8226'.$c.'</td></tr>';
+          }
+        ?>    
+      </table>
+
+   </div>
    
    
 </div>

@@ -23,7 +23,7 @@
 <div id="header">
     
     <ul>
-        <li class="menu"><a href="main.php"  style="text-decoration:none; color:rgb(0, 63, 179); "><b>HOME<b></a></li>
+        <li class="menu"><a href="index.php"  style="text-decoration:none; color:rgb(0, 63, 179); "><b>HOME<b></a></li>
          <li class="menu"><a href="about.php" style="text-decoration:none;color:rgb(0, 63, 179);">ABOUT</a></li>
           <li class="menu"><a href="contact.php" style="text-decoration:none; color:rgb(0, 63, 179);">CONTACTS</a></li>
     </ul>
@@ -33,24 +33,25 @@
     <br><br>
 <a href="student.php" class="myButton">student</a><br>
 <a href="admin.php" class="myButton">admin</a><br>
-<a href="#" class="myButton">about</a><br>
+<a href="about.php" class="myButton">about</a><br><br>
 </div>
 
 <div id="section">
    <h3 style="color:white; margin-left:500px; font-size:30px; font-family:Comic Sans MS; color: #0099ff;"> Student login</h3><br><br><br><br>
 
-   <div id="admin">
-        <form >
+   <div id="adm">
+        <form  action="student_redir.php" method="POST">
 
             Username:<br><br>
-            <input type="text" name="fname"><br><br>
+            <input type="text" name="usrname"><br><br>
             Password:<br><br>
             <input type="password" name="pswd"><br>
+            <input type="submit" name="submit" value="submit" id="gobtn" class="mybtn">
 
+             
         </form>
+        <a href="registration.php" id="gobtn" class="mybtn" value="newuser" name="submit">new user?</a>
 
-        <a href="#" class="mybtn" id="gobtn" type="submit" value="submit" onclick="return validateform()">go</a><span>Forget Password?</span><br><br><br>
-        <a href="registration.php" class="myButton">New User?</a><br>
         
    </div>
    
